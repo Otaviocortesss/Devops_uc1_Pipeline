@@ -25,7 +25,7 @@ jobs:
           python gerar_grafico.py
           # Renomeia os arquivos com o hash do commit para evitar conflitos
           mv relatorio.html relatorio-${{ github.sha }}.html
-          mv grafico.png grafico-${{ github.sha }}.png # Renomeia com o hash do commit  
+          mv grafico.png grafico-${{ github.sha }}.png 
 
       - name: Upload Artefatos
         uses: actions/upload-artifact@v4 
@@ -33,4 +33,4 @@ jobs:
           name: artefatos-processados
           path: |
             relatorio-*.html
-            grafico-*.png # Faz upload de todos os arquivos .png com esse padrão 
+            grafico-*.png  
